@@ -2,11 +2,12 @@
 
 ## API Endpoints and Usage
 
-- GET /books - Get all books
-- POST /books - Add a new book
-- GET /books/:id - Get a specific book by ID
-- PUT /books/:id - Update a book
-- DELETE /books/:id - Delete a book
+- GET /userInfo - Get User info
+- POST /createUser - Add a new User
+
+- GET /saveReward - Save User Reward
+- POST /getUserReward - Get User Reward
+- GET /getUserGameReward - Get User Specific Game Reward
 
 ## Set Up and Run Locally
 
