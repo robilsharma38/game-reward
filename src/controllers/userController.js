@@ -4,10 +4,10 @@ const userController = {
 
   getUserInfo: async (req, res) => {
     try {
-      if(!req.body.userWalletAddress){
+      if(!req.params.userWallet){
         return res.status(400).json({ message: "User Wallet Required" });
       }
-      const user = await User.findOne({ userWallet: req.body.userWalletAddress });
+      const user = await User.findOne({ userWallet: req.params.userWallet });
       if (!user) {
         return res.status(404).json({ message: 'User not found' });
       }

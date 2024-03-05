@@ -5,9 +5,9 @@ const router = express.Router();
 
 router.post('/saveReward', rewardController.saveReward);
 
-router.get('/getUserReward', rewardController.getUserReward);
+router.get('/getUserReward/:userWallet', rewardController.getUserReward);
 
-router.get('/getUserGameReward', rewardController.getUserGameReward);
+router.get('/getUserGameReward/:userWallet/:gameId', rewardController.getUserGameReward);
 
 module.exports = router;
 

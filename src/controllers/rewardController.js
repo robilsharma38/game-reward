@@ -4,10 +4,10 @@ const rewardController = {
 
     getUserReward: async (req, res) => {
     try {
-      if(!req.body.userWalletAddress){
+      if(!req.params.userWallet){
         return res.status(400).json({ message: "User Wallet Required" });
       }
-      const reward = await Reward.find({ userWallet: req.body.userWalletAddress });
+      const reward = await Reward.find({ userWallet: req.params.userWallet });
       if (!reward) {
         return res.status(404).json({ message: 'Reward not found' });
       }
@@ -34,10 +34,10 @@ const rewardController = {
 
   getUserGameReward: async (req, res) => {
     try {
-      if(!req.body.userWalletAddress || !req.body.gameId){
+      if(!req.params.userWallet || !req.params.gameId){
         return res.status(400).json({ message: "User Wallet and Game Id required" });
       }
-      const reward = await Reward.find({ userWallet: req.body.userWalletAddress,gameId:  req.body.gameId });
+      const reward = await Reward.find({ userWallet: req.params.userWallet,gameId:  req.params.gameId });
       if (!reward) {
         return res.status(404).json({ message: 'Reward not found' });
       }
